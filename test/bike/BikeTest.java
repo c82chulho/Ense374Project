@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 public class BikeTest extends TestCase {
 	
-	BikeList BList = new BikeList();
+
 
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -19,6 +19,7 @@ public class BikeTest extends TestCase {
 */
 	public void testAddBike() {
 		Bike b1 = new Bike();
+		BikeList BList = new BikeList();
 		b1.setBikeID(1);
 		b1.setColour("Red");
 		b1.setDimensions(1);
