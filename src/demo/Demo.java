@@ -27,13 +27,26 @@ public class Demo {
 		Billing bi;
 		Record r;
 		Station s;
-		User u;
+		User u= new User();
+		u.setName("Bob");
+		u.setAddress("123 fake Street");
+		u.setID(1);
+		u.setMembership(true);
+		u.setMembershipExpiration("end of time");
+		UList.addUser(u);
+		
+		
+		
+		
+		
+		
+		
 		
 		Scanner in = new Scanner(System.in);
 		int menuInput =0;
 		
 		while(menuInput != 6){
-			System.out.println("1. setup");
+			//System.out.println("1. setup");
 			System.out.println("2. reserve bike");
 			System.out.println("3. pick up bike");
 			System.out.println("4. return bike");
@@ -42,9 +55,9 @@ public class Demo {
 			menuInput = in.nextInt();
 			
 			
-			if(menuInput == 1){
-				int userMenu =0;
-				
+			//if(menuInput == 1){
+				//int userMenu =0;
+				/*
 				while(userMenu != 5){
 					System.out.flush();
 					System.out.println("1. add user");
@@ -53,11 +66,28 @@ public class Demo {
 					System.out.println("4. remove user");
 					System.out.println("5. exit");
 					userMenu = in.nextInt();
+					if(userMenu==1)
+					{
+						u= new User();
+						UList.addUser(u);
+						System.out.println("what is your name?");
+						String newName= in.toString();
+						u.setName(newName);
+						System.out.println("What is your address");
+						String newAddress= in.toString();
+						u.setAddress(newAddress);
+						System.out.println("What is your user ID");
+						int newID= in.nextInt();
+						u.setID(newID);
+						
+					}
 				}
+				*/
 				
-			}
+			//}
 			if(menuInput == 2){
 				System.out.println("2. reserve bike");
+				
 			}
 			if(menuInput == 3){
 				System.out.println("3. pick up bike");

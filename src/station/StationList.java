@@ -70,25 +70,22 @@ public Station searchStation(int stationID)
 	System.out.println("List is empty");
 	return test;
 }
-public Station searchByLocation(int location)
+public Vector<Station> searchByLocation(int location)
 {
-	Station test=new Station();
+	Vector<Station> test=new Vector<Station>();
 	if(!listOfStations.isEmpty())
 	{
 		for(int i=0;i<listOfStations.size();i++)
 		{
-			test=listOfStations.get(i);
-			if(test.getLocation()==location)
+			
+			if(listOfStations.get(i).getLocation()==location ||listOfStations.get(i).getLocation()==location+1||listOfStations.get(i).getLocation()==location-1)
 			{
 		
-				System.out.println("The station was found");
-				
-				return test;
-			}
+				test.add(listOfStations.get(i));
+				}
 		}
-		System.out.println("Record not found");
-}
-	System.out.println("List is empty");
+	}
+	
 	return test;
 }
 public void printList()
