@@ -2,17 +2,27 @@ package billing;
 
 public class Billing {
 	
-	private int recordID;
+	private int reserveID;
 	private float rentCost;
 	private float memberCost;
 	private float deposit;
 	private String payStatus;
 	
-	public int getRecordID() {
-		return recordID;
+	
+	public Billing(){
+		reserveID = 0;
+		rentCost = 0;
+		memberCost = 0;
+		deposit = 0;
+		payStatus ="N/A";
 	}
-	public void setRecordID(int recordID) {
-		this.recordID = recordID;
+	
+	
+	public int getReserveID() {
+		return reserveID;
+	}
+	public void setRecordID(int reserveID) {
+		this.reserveID = reserveID;
 	}	
 	public float getRentCost() {
 		return rentCost;

@@ -11,7 +11,12 @@ public class Bike {
 	
 	
 	public Bike(){
-		
+		bikeID = 0;
+		dimensions = 0;
+		colour = "N/A";
+		model = "N/A";
+		maker = "N/A";
+		year = 2014;
 	}
 	
 	public int getBikeID() {

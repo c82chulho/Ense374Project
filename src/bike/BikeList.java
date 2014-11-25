@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class BikeList extends Bike{
 
 
-	private ArrayList<Bike> bikeList;
+	private ArrayList<Bike> bikeList = new ArrayList<Bike>();
 		
 	public Bike searchBike(int BikeID){
 		int counter =0;
 		Bike temp;
-		
-		while(counter != bikeList.size()){
+		System.out.println(bikeList.size());
+		while(counter <= bikeList.size()){
 			temp =bikeList.get(counter);
 			if(temp.getBikeID() == BikeID){
 				return temp;
