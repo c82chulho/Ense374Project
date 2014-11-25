@@ -18,6 +18,7 @@ public class BikeTest extends TestCase {
 		b1.setMaker("N/A");
 		b1.setModel("N/A");
 		b1.setYear(2014);	
+		b1.setStation(1);
 		
 		BList.addBike(b1);
 		

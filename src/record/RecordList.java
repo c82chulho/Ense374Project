@@ -5,7 +5,7 @@ public class RecordList {
 private int numberOfRentals;
 private int numberActive;
 private int numberCompleted;
-private Vector<Record> recordList;
+private Vector<Record> recordList = new Vector<Record>();
 
 public int getNumberOfRentals()
 {
@@ -46,7 +46,7 @@ recordList=new Vector<Record>();
 // function will need to be changed
 public void addRecord(Record newRecord)
 {
-recordList.addElement(newRecord);
+	recordList.addElement(newRecord);
 }
 
 public void removeRecord(int reserveID)
@@ -118,8 +118,8 @@ public Record search(int recordID)
 		}
 		
 	}
-	test=new Record();
-	return test;
+
+	return null;
 	
 }
 public boolean searchBike(int BikeID)

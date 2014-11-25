@@ -8,6 +8,7 @@ public class Bike {
 	protected String model;
 	protected String maker;
 	protected int year;
+	protected int station;
 	
 	
 	public Bike(){
@@ -17,6 +18,7 @@ public class Bike {
 		model = "N/A";
 		maker = "N/A";
 		year = 2014;
+		station = 0;
 	}
 	
 	public int getBikeID() {
@@ -54,6 +56,14 @@ public class Bike {
 	}
 	public void setYear(int year) {
 		this.year = year;
+	}
+
+	public int getStation() {
+		return station;
+	}
+
+	public void setStation(int station) {
+		this.station = station;
 	}
 	
 

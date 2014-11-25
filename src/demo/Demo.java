@@ -33,7 +33,7 @@ public class Demo {
 		int menuInput =0;
 		
 		while(menuInput != 6){
-			System.out.println("1. user");
+			System.out.println("1. setup");
 			System.out.println("2. reserve bike");
 			System.out.println("3. pick up bike");
 			System.out.println("4. return bike");
