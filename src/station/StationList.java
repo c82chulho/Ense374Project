@@ -95,10 +95,8 @@ public void printList()
 {
 	for (int i=0;i<listOfStations.size();i++)
 	{
-		System.out.println("The station ID is: ");
-		System.out.println(listOfStations.get(i).getStationID());
-		System.out.println("The station location is");
-		System.out.println(listOfStations.get(i).getLocation());
+		System.out.println("\nStation ID: "+listOfStations.get(i).getStationID());
+		System.out.println("Station location: "+listOfStations.get(i).getLocation());
 	}
 }
 public Bike searchForBike(int bikeID)

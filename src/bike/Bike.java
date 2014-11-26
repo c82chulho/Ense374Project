@@ -67,12 +67,12 @@ public class Bike {
 	}
 	public void printBike()
 	{
-		System.out.println(bikeID);
-		System.out.println(dimensions);
-		System.out.println(colour);
-		System.out.println(model);
-		System.out.println(maker);
-		System.out.println(year);
+		System.out.println("\nbikeID: "+bikeID);
+		System.out.println("dimensions: "+dimensions);
+		System.out.println("colour: "+colour);
+		System.out.println("model: "+model);
+		System.out.println("maker: "+maker);
+		System.out.println("year: "+year);
 	}
 
 }
