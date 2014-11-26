@@ -83,56 +83,29 @@ public class Demo {
 		Scanner in = new Scanner(System.in);
 		int menuInput =0;
 		
-		while(menuInput != 6){
-			//System.out.println("1. setup");
-			System.out.println("2. reserve bike");
-			System.out.println("3. pick up bike");
-			System.out.println("4. return bike");
-			System.out.println("5. update reservation");
-			System.out.println("6. exit");
+		while(menuInput != 4){
+			
+			System.out.println("1. reserve bike");
+			System.out.println("2. pick up bike");
+			System.out.println("3. return bike");
+			System.out.println("4. exit");
 			menuInput = in.nextInt();
 			
 			
-			//if(menuInput == 1){
-				//int userMenu =0;
-				/*
-				while(userMenu != 5){
-					System.out.flush();
-					System.out.println("1. add user");
-					System.out.println("2. get user");
-					System.out.println("3. update user");
-					System.out.println("4. remove user");
-					System.out.println("5. exit");
-					userMenu = in.nextInt();
-					if(userMenu==1)
-					{
-						u= new User();
-						UList.addUser(u);
-						System.out.println("what is your name?");
-						String newName= in.toString();
-						u.setName(newName);
-						System.out.println("What is your address");
-						String newAddress= in.toString();
-						u.setAddress(newAddress);
-						System.out.println("What is your user ID");
-						int newID= in.nextInt();
-						u.setID(newID);
-						
-					}
-				}
-				*/
-				
-			//}
-			if(menuInput == 2){
-				System.out.println("2. reserve bike");
+			if(menuInput == 1){
+				System.out.println("1. reserve bike");
 				SList.printList();
 				System.out.println("select a station");
+				System.out.println("(To menu: 999)");
 				int stationID= in.nextInt();
+				if(stationID ==999) continue;
 				Station yourStation= SList.searchStation(stationID);
 				if(yourStation.printAvailable())
 				{
 				System.out.println("enter the bike ID you want");
+				System.out.println("(To menu: 999)");
 				int bikeChoice= in.nextInt();
+				if(bikeChoice ==999) continue;
 				r= new Record(u1.getID(),bikeChoice,4,5,yourStation.getStationID(),"Reserved",baseID);
 				System.out.print("Your reserve ID number is:   ");
 				System.out.println(baseID);
@@ -143,18 +116,20 @@ public class Demo {
 					System.out.println("No available bikes");
 				}
 			}
-			if(menuInput == 3){
-				System.out.println("3. pick up bike");
+			if(menuInput == 2){
+				System.out.println("2. pick up bike");
 				System.out.println("What is your reserve ID");
+				System.out.println("(To menu: 999)");
 				int reserveID= in.nextInt();
-				
+				if(reserveID ==999) continue;
 				SList.searchStation(thisStationID).getListOfRecords().searchRecord(reserveID).setStatus("picked-up");
 			}
-			if(menuInput == 4){
-				System.out.println("4. return bike");
+			if(menuInput == 3){
+				System.out.println("3. return bike");
 				System.out.println("Please enter your reserveID");
-				
+				System.out.println("(To menu: 999)");
 				int returnID= in.nextInt();
+				if(returnID == 999) continue;
 				SList.searchReserve(returnID).setStatus("Available");
 				System.out.println(SList.searchStation(thisStationID).getListOfRecords().searchRecord(returnID).getStatus());
 				int bikeNumber = SList.searchStation(thisStationID).getListOfRecords().searchRecord(returnID).getIDofBike();
@@ -163,19 +138,9 @@ public class Demo {
 				int oldStationID=SList.searchReserve(returnID).getStationID();
 				SList.searchStation(oldStationID).getListOfBikes().removeBike(bikeNumber);
 				SList.searchStation(thisStationID).getListOfBikes().addBike(returnedBike);
-				
-			if(menuInput == 5){
-				System.out.println("5. update reservation");
-			}
-			
 		
 		}
-		
-
-		
-		
-		
-		
+				
 		
 	}
 	
