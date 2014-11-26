@@ -6,7 +6,6 @@ private int IDofBike;
 private int timeOfRental;
 private int timeOfReturn;
 private int stationID;
-private int StationD;
 private String status;
 private int reserveID;
 public int getIDofRenter()
@@ -72,25 +71,17 @@ public Record()
 	timeOfRental=-1;
 	timeOfReturn=-1;
 	stationID=-1;
-	StationD=-1;
-	status="";
+	status="Available";
 	reserveID=-1;
 }
-public Record(int rentID,int bikeID, int rentTime, int returnTime, int station, int station2, String aStatus,int aReserveID)
+public Record(int rentID,int bikeID, int rentTime, int returnTime, int station,String aStatus,int aReserveID)
 {
 	IDofRenter=rentID;
 	IDofBike=bikeID;
 	timeOfRental=rentTime;
 	timeOfReturn=returnTime;
 	stationID=station;
-	StationD = station2;
 	status="aStatus";
 	reserveID=aReserveID;
-}
-public int getStationD() {
-	return StationD;
-}
-public void setStationD(int stationD) {
-	StationD = stationD;
 }
 }

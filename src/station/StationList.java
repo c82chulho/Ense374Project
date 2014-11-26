@@ -2,11 +2,14 @@ package station;
 
 import java.util.Vector;
 
+import bike.Bike;
+import record.Record;
+
 
 
 public class StationList {
 public int numberOfStations;
-public Vector<Station> listOfStations;
+public Vector<Station> listOfStations= new Vector<Station>();
 public StationList()
 {
 	numberOfStations=0;
@@ -65,7 +68,7 @@ public Station searchStation(int stationID)
 				return test;
 			}
 		}
-		System.out.println("Record not found");
+		System.out.println("Station not found");
 }
 	System.out.println("List is empty");
 	return test;
@@ -78,35 +81,56 @@ public Vector<Station> searchByLocation(int location)
 		for(int i=0;i<listOfStations.size();i++)
 		{
 			
-			if(listOfStations.get(i).getLocation()==location ||listOfStations.get(i).getLocation()==location+1||listOfStations.get(i).getLocation()==location-1)
+			if(listOfStations.get(i).getLocation()==location||test.get(i).getLocation()==location||test.get(i).getLocation()==location-1)
 			{
-		
-				test.add(listOfStations.get(i));
-				}
+				test.addElement(listOfStations.get(i));
+			}
 		}
-	}
+		
+}
 	
 	return test;
 }
 public void printList()
 {
-	for (int i=0;i<numberOfStations;i++)
+	for (int i=0;i<listOfStations.size();i++)
 	{
-		
+		System.out.println("The station ID is: ");
 		System.out.println(listOfStations.get(i).getStationID());
+		System.out.println("The station location is");
 		System.out.println(listOfStations.get(i).getLocation());
 	}
 }
-public void searchForBike(int bikeID)
+public Bike searchForBike(int bikeID)
 {
+	Bike temp1= new Bike();
 		for(int i=0;i<listOfStations.size();i++)
 		{
-			if (listOfStations.get(i).getListOfRecords().searchBike(bikeID))
+			Bike test= new Bike();
+		    test=listOfStations.get(i).getListOfBikes().searchBike(bikeID);
+			if (test.getBikeID()==bikeID)
 			{
-				System.out.println(listOfStations.get(i).getStationID());
-				System.out.println(listOfStations.get(i).getLocation());
+				temp1=test;
 			}
 		}
+		return temp1;
+}
+
 	
+
+
+public Record searchReserve(int reserveID)
+{
+	Record search = new Record();
+	for(int i=0;i<listOfStations.size();i++)
+	{
+		if (listOfStations.get(i).getListOfRecords().searchRecord(reserveID).getReserveID()==reserveID)
+		{
+			search=listOfStations.get(i).getListOfRecords().searchRecord(reserveID);
+		}
+
+	}
+	return search;
 }
 }
+

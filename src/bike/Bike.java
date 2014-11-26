@@ -65,6 +65,14 @@ public class Bike {
 	public void setStation(int station) {
 		this.station = station;
 	}
-	
+	public void printBike()
+	{
+		System.out.println(bikeID);
+		System.out.println(dimensions);
+		System.out.println(colour);
+		System.out.println(model);
+		System.out.println(maker);
+		System.out.println(year);
+	}
 
 }

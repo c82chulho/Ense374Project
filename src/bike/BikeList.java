@@ -6,19 +6,22 @@ public class BikeList extends Bike{
 
 
 	private ArrayList<Bike> bikeList = new ArrayList<Bike>();
-		
+	public ArrayList<Bike> getBikeList()
+	{
+		return bikeList;
+	}
 	public Bike searchBike(int BikeID){
 		int counter =0;
-		Bike temp;
+		Bike temp1= new Bike();
 		System.out.println(bikeList.size());
-		while(counter <= bikeList.size()){
-			temp =bikeList.get(counter);
-			if(temp.getBikeID() == BikeID){
-				return temp;
+		while(counter < bikeList.size()){
+			if(bikeList.get(counter).getBikeID()==BikeID)
+			{
+			temp1=bikeList.get(counter);
 			}
 			counter++;
 		}
-		return null;
+		return temp1;
 		
 	}
 	

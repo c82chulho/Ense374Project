@@ -5,7 +5,7 @@ public class RecordList {
 private int numberOfRentals;
 private int numberActive;
 private int numberCompleted;
-private Vector<Record> recordList = new Vector<Record>();
+private Vector<Record> recordList;
 
 public int getNumberOfRentals()
 {
@@ -46,7 +46,7 @@ recordList=new Vector<Record>();
 // function will need to be changed
 public void addRecord(Record newRecord)
 {
-	recordList.addElement(newRecord);
+recordList.addElement(newRecord);
 }
 
 public void removeRecord(int reserveID)
@@ -101,7 +101,7 @@ public void completeRecord(int recordID)
 		System.out.println("list is empty");
 	}
 }
-public Record search(int recordID)
+public Record searchRecord(int recordID)
 {
 	Record test=new Record();
 	if(!recordList.isEmpty())
@@ -118,8 +118,8 @@ public Record search(int recordID)
 		}
 		
 	}
-
-	return null;
+	
+	return test;
 	
 }
 public boolean searchBike(int BikeID)
@@ -139,7 +139,7 @@ public boolean searchBike(int BikeID)
 		}
 		
 	}
-	test=new Record();
+	
 	return false;
 	
 }
