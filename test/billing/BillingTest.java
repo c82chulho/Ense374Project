@@ -15,22 +15,23 @@ public class BillingTest extends TestCase {
 	}
 
 	
-	public void testBikeList() {
+	public void testBikeListInsert() {
 		
-		b1.setRecordID(1);
+		b1.setReserveID(1);
 		b1.setRentCost(3);
 		b1.setMemberCost(2);
 		b1.setDeposit(10);
 		b1.setPayStatus("test");
 		
 		BList.addBilling(b1);
-		
-		b2= BList.searchBilling(1);
-		b2.setPayStatus("test22");
-		
-		BList.updateBilling(b2);
-		
-		BList.removeBilling(1);
-		
 		}
+	
+	public void testBikeListSearch() {
+		b2= BList.searchBilling(1);
+		}
+	
+	public void testBikeListRemove() {
+		b2= BList.searchBilling(1);		
+		BList.removeBilling(b2.getReserveID());		
+		}	
 }

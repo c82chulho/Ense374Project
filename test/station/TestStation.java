@@ -8,15 +8,26 @@ public class TestStation extends TestCase {
 	Station s2;
 	StationList SList = new StationList();
 	
-	public void testUserList(){
+	public void testStationListInsert(){
 		
 		s1.setStationID(1);
 		s1.setLocation(1);
 		
 		SList.addStation(s1);
-		s2 = SList.searchStation(1);
-		
-		SList.removeStation(1);
 	}
+	
+	public void testStationListSearch(){
+		
+
+		s2 = SList.searchStation(1);
+	}	
+	
+	public void testStationListRemove(){
+		
+		s2 = SList.searchStation(1);		
+		SList.removeStation(1);
+	}	
+	
+	
 
 }

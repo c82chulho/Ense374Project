@@ -10,7 +10,7 @@ public class BikeTest extends TestCase {
 	BikeList BList = new BikeList();
 	
 	
-	public void testBikeList() {
+	public void testBikeListInsert() {
 
 		b1.setBikeID(1);
 		b1.setColour("Red");
@@ -22,15 +22,18 @@ public class BikeTest extends TestCase {
 		
 		BList.addBike(b1);
 		
-		b2 = BList.searchBike(1);
-		b2.setColour("Blue");
 		
-		BList.updateBike(b2);
-		
-		BList.removeBike(1);
-		
-		}
+	}
 
+	public void testBikeListSearch() {
+
+		b2 = BList.searchBike(1);
+	}
+
+	public void testBikeListRemove() {
+		b2 = BList.searchBike(1);
+		BList.removeBike(b2.getBikeID());
+	}
 
 
 

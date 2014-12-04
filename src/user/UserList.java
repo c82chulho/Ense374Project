@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class UserList {
 private int numbOfUsers;
-private Vector<User> listOfUsers;
+private Vector<User> listOfUsers = new Vector<User>();
 
 public Vector<User> getListOfUsers() {
 	return listOfUsers;
@@ -23,16 +23,15 @@ public void setNumbOfUsers(int numbOfUsers) {
 }
 public User searchByID(int ID)
 {
+	User temp = new User();
 	for (int i=0;i<listOfUsers.size();i++)
 	{
 		if( listOfUsers.get(i).getID()==ID)
 		{
-			System.out.println("The user is in the system");
-			return listOfUsers.get(i);
+			temp = listOfUsers.get(i);
 		}
 	}
-	System.out.println("The user is not in the system");
-	return null;
+	return temp;
 }
 public User searchByName(String aName)
 {

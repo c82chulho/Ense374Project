@@ -9,30 +9,32 @@ public class BillingList extends Billing{
 	
 	
 	public Billing searchBilling(Record newRecord){
-		Billing temp;
+		Billing temp = new Billing();
 		
 		int reserveID = newRecord.getReserveID();
 		int counter = 0;
-		while(counter <= listBilling.size()){
+		while(counter < listBilling.size()){
 			temp = listBilling.get(counter);
-			if(temp.getReserveID() == reserveID)
-				return temp;
+			if(listBilling.get(counter).getReserveID() == reserveID){
+				temp = listBilling.get(counter);
+			}
 			counter++;
 		}
-		return null;
+		return temp;
 		
 	}
 	
 	public Billing searchBilling(int reserveID){
-		Billing temp;
+		Billing temp = new Billing();
 		int counter = 0;
-		while(counter != listBilling.size()){
+		while(counter < listBilling.size()){
 			temp = listBilling.get(counter);
-			if(temp.getReserveID() == reserveID)
-				return temp;
+			if(listBilling.get(counter).getReserveID() == reserveID){
+				temp = listBilling.get(counter);
+			}
 			counter++;
 		}
-		return null;
+		return temp;
 		
 	}
 	
@@ -99,7 +101,7 @@ public class BillingList extends Billing{
 		Billing temp = searchBilling(newRecord);
 		if(temp == null){
 			temp = new Billing();
-			temp.setRecordID(0);
+			temp.setReserveID(0);
 			// comment out until record class is done
 			// setRecordID(newRecord.getReocrdID());
 			temp.setRentCost(5);
@@ -109,7 +111,7 @@ public class BillingList extends Billing{
 			listBilling.add(temp);
 		}
 		else{
-			temp.setRecordID(0);
+			temp.setReserveID(0);
 			// comment out until record class is done
 			// setRecordID(newRecord.getReocrdID());
 			temp.setRentCost(5);
